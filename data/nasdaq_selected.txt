@@ -1,0 +1,32 @@
+Symbol|Security Name|Market Category|Test Issue|Financial Status|Round Lot Size
+AAPL|Apple Inc. - Common Stock|Q|N|N|100
+MSFT|Microsoft Corporation - Common Stock|Q|N|N|100
+PBCT|People's United Financial, Inc. - Common Stock|Q|N|N|100
+BCOV|Brightcove Inc. - Common Stock|Q|N|N|100
+BCPC|Balchem Corporation - Common Stock|Q|N|N|100
+BCRX|BioCryst Pharmaceuticals, Inc. - Common Stock|Q|N|N|100
+BCSB|BCSB Bancorp, Inc. - Common Stock|G|N|N|100
+BDBD|Boulder Brands, Inc. - Common Stock|Q|N|N|100
+BDE|Black Diamond, Inc. - Common Stock|Q|N|N|100
+BDGE|Bridge Bancorp, Inc. - Common Stock|Q|N|N|100
+BDMS|Birner Dental Management Services, Inc. - Common Stock|S|N|N|100
+BDSI|BioDelivery Sciences International, Inc. - Common Stock|S|N|N|100
+BEAT|BioTelemetry, Inc. - Common Stock|G|N|N|100
+BEAV|B/E Aerospace, Inc. - Common Stock|Q|N|N|100
+BEBE|bebe stores, inc. - Common Stock|Q|N|N|100
+BECN|Beacon Roofing Supply, Inc. - Common Stock|Q|N|N|100
+BELFA|Bel Fuse Inc. - Class A Common Stock|Q|N|N|100
+BELFB|Bel Fuse Inc. - Class B Common Stock|Q|N|N|100
+BERK|Berkshire Bancorp, Inc. - Common Stock|G|N|N|100
+BFIN|BankFinancial Corporation - Common Stock|Q|N|N|100
+BGCP|BGC Partners, Inc. - Class A Common Stock|Q|N|N|100
+BGFV|Big 5 Sporting Goods Corporation - Common Stock|Q|N|N|100
+BGMD|BG Medicine, Inc. - Common Stock|G|N|D|100
+BGSC|BGS Acquisition Corp. - Ordinary Shares|S|N|D|100
+BGSCU|BGS Acquisition Corp. - Units consisting of one ordinary share and one warrant|S|N|N|100
+BGSCW|BGS Acquisition Corp. - Warrants|S|N|N|100
+BIB|ProShares Ultra Nasdaq Biotechnology|G|N|N|100
+BICK|First Trust BICK Index Fund|G|N|N|100
+BIDU|Baidu, Inc. - American Depositary Shares, each representing one tenth Class A ordinary share|Q|N|N|100
+BIIB|Biogen Idec Inc. - Common Stock|Q|N|N|100
+BIND|BIND Therapeutics, Inc. - Common Stock|Q|N|N|100

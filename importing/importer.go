@@ -61,11 +61,10 @@ func saveSymbols(symbols []*models.Symbol) {
 	for _, s := range symbols {
 		store.SaveSymbol(s)
 	}
-
 }
 
 func saveHistory(data []*models.HistoricalDataPoint, wg *sync.WaitGroup) {
-	store.ClearHistory(data[0].Symbol)
+	fmt.Println("Saving history	")
 	for _, d := range data {
 		store.SaveHistory(d)
 	}

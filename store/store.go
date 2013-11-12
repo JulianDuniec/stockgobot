@@ -16,26 +16,28 @@ func Init() {
 	if err != nil {
 		panic(err)
 	}
+	ensureIndexes()
 }
+
 func SaveSymbol(symbol *models.Symbol) {
 	if session == nil {
 		Init()
 	}
-	session.DB("stock").C("symbols").Upsert(symbol, symbol)
-}
-
-func ClearHistory(symbol string) {
-	if session == nil {
-		Init()
-	}
-	session.DB("stock").C("history").RemoveAll(bson.M{"symbol": symbol})
+	session.DB("stock").C("symbols").Upsert(bson.M{"Symbol": symbol.Symbol}, symbol)
 }
 
 func SaveHistory(history *models.HistoricalDataPoint) {
 	if session == nil {
 		Init()
 	}
-	session.DB("stock").C("history").Insert(history)
+	session.DB("stock").C("history").Upsert(bson.M{
+		"Symbol": history.Symbol, "Date": history.Date},
+		bson.M{"$set": bson.M{
+			"Open":   history.Open,
+			"Close":  history.Close,
+			"High":   history.High,
+			"Low":    history.Low,
+			"Volume": history.Volume}})
 }
 
 func GetSymbols() []models.Symbol {
@@ -45,4 +47,24 @@ func GetSymbols() []models.Symbol {
 	result := []models.Symbol{}
 	session.DB("stock").C("symbols").Find(bson.M{}).All(&result)
 	return result
+}
+
+func ensureIndexes() {
+	historyIndex := mgo.Index{
+		Key:        []string{"Date", "Symbol"},
+		Unique:     true,
+		DropDups:   true,
+		Background: true,
+		Sparse:     false}
+
+	session.DB("stock").C("history").EnsureIndex(historyIndex)
+
+	symbolsIndex := mgo.Index{
+		Key:        []string{"Symbol"},
+		Unique:     true,
+		DropDups:   true,
+		Background: true,
+		Sparse:     false}
+
+	session.DB("stock").C("history").EnsureIndex(symbolsIndex)
 }

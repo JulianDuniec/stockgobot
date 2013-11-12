@@ -29,7 +29,7 @@ func ImportHistory(symbol string) ([]*models.HistoricalDataPoint, error) {
 		if err == io.EOF {
 			break
 		} else if err != nil {
-			panic(err)
+			return data, err
 		}
 		if count > 0 {
 			data = append(data, createHistoricalDataPointFromRow(symbol, s))
@@ -61,5 +61,6 @@ func parseTime(s string) time.Time {
 func getUrl(symbol string) string {
 	return fmt.Sprintf("http://ichart.finance.yahoo.com/table.csv?s=%s&e=%00d&f=%d&g=d&ignore=.csv",
 		symbol,
-		int(time.Now().Month()), time.Now().Year())
+		int(time.Now().Month()),
+		time.Now().Year())
 }

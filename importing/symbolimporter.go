@@ -9,7 +9,7 @@ import (
 )
 
 func ImportSymbols() []*models.Symbol {
-	file, err := os.Open("./data/nasdaqlisted.txt")
+	file, err := os.Open("./data/nasdaq_selected.txt")
 	if err != nil {
 		panic(err)
 	}
